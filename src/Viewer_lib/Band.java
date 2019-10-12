@@ -5,21 +5,32 @@
  */
 package Viewer_lib;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Darkside-PC
  */
 public class Band {
-    private ArrayList<Festival> fest;
-    private String bandName;
+    private List<String> fest;
+    private String bandName = "Not Available";
+    private String recordLbl = "Not Available";
+    
+    public Band(List<String> fest, String name, String recordLbl){
+        this.fest = fest;
+        this.bandName = name;
+        this.recordLbl = recordLbl;
+    }
     
     public String getBandName(){
         return this.bandName;
     }
     
-    public ArrayList<Festival> getFestivalName(){
+    public String recordLbl(){
+        return this.recordLbl;
+    }
+    
+    public List<String> getFestivalName(){
         return this.fest;
     }
     

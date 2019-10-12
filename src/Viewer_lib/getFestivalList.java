@@ -17,17 +17,19 @@ import org.json.JSONException;
  * @author Darkside-PC
  */
 public class getFestivalList {
-    public JSONArray getFestivalList(){
+    public static JSONArray getList(){
         JSONArray festivalJSON = null;
         String urlString = (String)("http://eacodingtest.digital.energyaustralia.com.au/"
                 + "api/v1/festivals");
         
+        //ouput message that indicate progress
         System.out.println("Requested URL:" + urlString);
         StringBuilder builder = new StringBuilder();
         URLConnection connection = null;
         InputStreamReader input = null;
         
         try{
+            //request festival entry from swagger api
             URL url = new URL(urlString);
             connection = url.openConnection();
             input = new InputStreamReader(connection.getInputStream());
@@ -40,6 +42,7 @@ public class getFestivalList {
                         builder.append(entry);
                     }
                 }
+                reader.close();
             }
             catch (Exception ex){
                 ex.printStackTrace();
@@ -50,8 +53,9 @@ public class getFestivalList {
             e.printStackTrace();
         }
         
+        //convert Festival data String to JSON array
         try{
-           festivalJSON = new JSONArray(builder.toString()); 
+            festivalJSON = new JSONArray(builder.toString()); 
         }catch(JSONException JSONEx){
             JSONEx.printStackTrace();
         }

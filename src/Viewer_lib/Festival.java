@@ -5,18 +5,26 @@
  */
 package Viewer_lib;
 
+import java.util.List;
+
 /**
  *
  * @author Darkside-PC
  */
 public class Festival {
-    private String festName;
+    private String festName = "Not Available";
+    private List<Band> Bands;
     
     public String getFestivalName(){
         return this.festName;
     }
     
+    public List<Band> getBands(){
+        return this.Bands;
+    }
+    
+    @Override
     public String toString(){
-        return "\n\t" + this.festName;
+        return "\n" + this.festName + "\n\t" + this.Bands.toString();
     }
 }
