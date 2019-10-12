@@ -12,19 +12,27 @@ import java.util.List;
  * @author Darkside-PC
  */
 public class Festival {
-    private String festName = "Not Available";
-    private List<Band> Bands;
+    private String name = "Not Available";
+    private List<Band> bands;
     
-    public String getFestivalName(){
-        return this.festName;
+    public String getName(){
+        return this.name;
+    }
+    
+    public void setName(String name){
+        this.name = name;
     }
     
     public List<Band> getBands(){
-        return this.Bands;
+        return this.bands;
+    }
+    
+    public void setBands(List<Band> bands){
+        this.bands = bands;
     }
     
     @Override
     public String toString(){
-        return "\n" + this.festName + "\n\t" + this.Bands.toString();
+        return "\n" + this.name + "\n\t" + this.bands.toString();
     }
 }

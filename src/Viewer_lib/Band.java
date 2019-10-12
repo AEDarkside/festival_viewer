@@ -5,37 +5,46 @@
  */
 package Viewer_lib;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author Darkside-PC
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Band {
-    private List<String> fest;
-    private String bandName = "Not Available";
-    private String recordLbl = "Not Available";
+    private String name = "Not Available";
+    private String recordLabel = "Not Available";
+    private List<String> festivals = new ArrayList<>();
     
-    public Band(List<String> fest, String name, String recordLbl){
-        this.fest = fest;
-        this.bandName = name;
-        this.recordLbl = recordLbl;
+    public String getName(){
+        return this.name;
     }
     
-    public String getBandName(){
-        return this.bandName;
+    public void setName(String name){
+        this.name = name;
     }
     
-    public String recordLbl(){
-        return this.recordLbl;
+    public String getRecordLabel(){
+        return this.recordLabel;
     }
     
-    public List<String> getFestivalName(){
-        return this.fest;
+    public void setRecordLabel(String recordLabel){
+        this.recordLabel = recordLabel;
+    }
+    
+    public List<String> getFestivals(){
+        return this.festivals;
+    }
+    
+    public void setFestivals(List<String> festivals){
+        this.festivals = festivals;
     }
     
     @Override
     public String toString(){
-        return "\t" + this.bandName + this.fest.toString();
+        return "\t" + this.name + " Label: " + this.recordLabel;
     }
 }

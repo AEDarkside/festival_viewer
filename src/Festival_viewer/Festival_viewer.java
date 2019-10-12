@@ -5,8 +5,10 @@
  */
 package Festival_viewer;
 
-import Viewer_lib.getFestivalList;
-import org.json.JSONArray;
+import Viewer_lib.Festival;
+import Viewer_lib.recordBuilder;
+import java.util.List;
+
 
 /**
  *
@@ -19,8 +21,7 @@ public class Festival_viewer {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        JSONArray festivals = getFestivalList.getList();
-        System.out.println("\n" + festivals);
+        List<Festival> records = recordBuilder.buildRecord();
+        System.out.print(records.toString());
     }
-    
 }
