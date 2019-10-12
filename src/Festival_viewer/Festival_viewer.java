@@ -13,6 +13,12 @@ import java.util.List;
 /**
  *
  * @author Darkside-PC
+ * 
+ * reference:
+ * https://stackoverflow.com/questions/20534862/how-to-efficiently-map-a-org-json-jsonobject-to-a-pojo
+ * https://stackoverflow.com/questions/23479332/import-json-url-to-java-and-parse-it-using-jackson-library
+ * http://tutorials.jenkov.com/java-json/jackson-objectmapper.html#jackson-objectmapper-example
+ * 
  */
 public class Festival_viewer {
 
