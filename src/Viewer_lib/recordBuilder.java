@@ -40,12 +40,15 @@ public class recordBuilder {
     
     //build band from festivals list and order by record label
     public static List<Band> buildBands(List<Festival> festivals){
-        //parse festival list into list of bands and sort by record label
+        /*  parse festival list into list of bands and order by record label and
+        *   then order by band's name
+        */
         List<Band> bands = null;
         bands = festivals
                 .stream()
                 .flatMap(Festival -> Festival.getBands().stream())
-                .sorted(Comparator.comparing(Band::getRecordLabel))
+                .sorted(Comparator.comparing(Band::getRecordLabel)
+                        .thenComparing(Band -> Band.getName()))
                 .collect(Collectors.toList());
         
         //retrive list of festival for band    
@@ -79,7 +82,6 @@ public class recordBuilder {
                 band.setRecordLabel(defaultLabel);
                 System.out.println(band.toString());
             }else if(currLabel.equals(lastLabel)){
-                
                 System.out.println(band.toStringWithOutLabel());
             }else{
                 System.out.println(band.toString());

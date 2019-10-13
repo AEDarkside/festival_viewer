@@ -22,7 +22,7 @@ import java.util.List;
  * http://tutorials.jenkov.com/java-json/jackson-objectmapper.html#jackson-objectmapper-example
  * http://tutorials.jenkov.com/java-json/jackson-annotations.html
  * https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
- * 
+ * https://stackoverflow.com/questions/4805606/how-to-sort-by-two-fields-in-java
  */
 public class Festival_viewer {
 
