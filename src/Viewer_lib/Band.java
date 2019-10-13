@@ -15,10 +15,11 @@ import java.util.List;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Band {
-    private String name = "Not Available";
-    private String recordLabel = "Not Available";
+    private String name = "[Not Available]";
+    private String recordLabel = "[Not Available]";
     private List<String> festivals = new ArrayList<>();
     
+    //getter and setter class for jackson json api
     public String getName(){
         return this.name;
     }
@@ -45,6 +46,11 @@ public class Band {
     
     @Override
     public String toString(){
-        return "\t" + this.name + " Label: " + this.recordLabel;
+        return "\n" + this.recordLabel + "\n\t" + this.name + "\n\t\t" + 
+                festivals.toString();
+    }
+    public String toStringWithOutLabel(){
+        return "\t" + this.name + "\n\t\t" + 
+                festivals.toString();
     }
 }

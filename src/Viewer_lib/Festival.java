@@ -12,9 +12,10 @@ import java.util.List;
  * @author Darkside-PC
  */
 public class Festival {
-    private String name = "Not Available";
+    private String name = "[Not Available]";
     private List<Band> bands;
     
+    //getter and setter class for jackson json api
     public String getName(){
         return this.name;
     }
